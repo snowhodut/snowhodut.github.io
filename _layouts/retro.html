@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- 기본 설정 --- */
+    :root {
+      --bg-color: #0a0a0a;       /* 아주 어두운 검정 */
+      --text-color: #e0e0e0;     /* 밝은 회색 텍스트 */
+      --neon-pink: #ff00ff;      /* 형광 핑크 (체크포인트 이미지 참조) */
+      --neon-green: #00ff00;     /* 형광 그린 (체크포인트 이미지 참조) */
+      --neon-blue: #00ffff;      /* 형광 블루 (사이버펑크 느낌) */
+      --terminal-bg: #1a1a1a;    /* 터미널 박스 배경색 */
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Orbitron', sans-serif; /* 기본 폰트는 미래적인 느낌 */
+      line-height: 1.6;
+      background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px; /* 배경에 은은한 그리드 패턴 추가 */
+    }
+
+    a {
+      color: var(--neon-blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      color: var(--neon-pink);
+      text-shadow: 0 0 5px var(--neon-pink);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 2px solid var(--neon-pink);
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+      background-color: rgba(10, 10, 10, 0.9); /* 배경을 살짝 투명하게 */
+    }
+
+    /* --- 타이포그래피 & 헤더 --- */
+    h1, h2, h3 {
+      font-family: 'Press Start 2P', cursive; /* 제목은 픽셀 폰트 사용 */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      color: var(--neon-pink);
+      text-shadow: 2px 2px var(--neon-blue), -2px -2px var(--neon-green); /* 글리치 효과 흉내 */
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--neon-green);
+      border-bottom: 2px dashed var(--neon-green);
+      padding-bottom: 10px;
+      margin-top: 50px;
+    }
+
+    h3 {
+      color: var(--neon-blue);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    /* --- 프로필 섹션 --- */
+    .profile-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--neon-pink);
+      box-shadow: 0 0 20px var(--neon-pink);
+    }
+    
+    /* 이미지 글리치 효과 (간단한 버전) */
+    .glitch-effect:hover {
+        animation: glitch-anim 0.5s infinite;
+    }
+
+    @keyframes glitch-anim {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    .profile-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    .profile-info li {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .cyber-text {
+        font-weight: bold;
+        color: var(--neon-blue);
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* --- 터미널 스타일 박스 --- */
+    .terminal-box {
+      background-color: var(--terminal-bg);
+      border: 1px solid var(--neon-green);
+      padding: 20px;
+      font-family: 'Courier New', Courier, monospace; /* 터미널 폰트 */
+      color: var(--neon-green);
+    }
+    .terminal-box p {
+        margin: 5px 0;
+    }
+
+    /* --- 프로젝트 섹션 --- */
+    .project-meta {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin-bottom: 20px;
+    }
+    
+    .details-box {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid var(--neon-blue);
+        padding: 15px 20px;
+        margin-top: 20px;
+    }
+
+    .tech-stack {
+        margin-top: 15px;
+    }
+    .tech-stack span {
+        display: inline-block;
+        background-color: var(--terminal-bg);
+        border: 1px solid var(--neon-blue);
+        color: var(--neon-blue);
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* --- 타임라인 섹션 --- */
+    .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+        border-left: 2px solid var(--neon-pink);
+    }
+    .timeline-item::before {
+        content: attr(data-year);
+        position: absolute;
+        left: -80px;
+        top: 0;
+        font-family: 'Press Start 2P';
+        color: var(--neon-pink);
+        font-size: 0.8rem;
+    }
+    .timeline-item ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    /* --- 기타 스타일 --- */
+    .neon-divider {
+        border: none;
+        height: 2px;
+        background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+        margin: 50px 0;
+    }
+
+    .highlight {
+        color: var(--neon-green);
+        font-weight: bold;
+    }
+    
+    /* 반응형 처리 */
+    @media (max-width: 768px) {
+        .profile-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .timeline-item::before {
+            position: static;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .timeline-item {
+            padding-left: 0;
+            border-left: none;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {{ content }}
+  </div>
+</body>
+</html>

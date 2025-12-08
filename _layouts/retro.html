@@ -4,215 +4,216 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
   <style>
-    /* --- 기본 설정 --- */
     :root {
-      --bg-color: #0a0a0a;       /* 아주 어두운 검정 */
-      --text-color: #e0e0e0;     /* 밝은 회색 텍스트 */
-      --neon-pink: #ff00ff;      /* 형광 핑크 (체크포인트 이미지 참조) */
-      --neon-green: #00ff00;     /* 형광 그린 (체크포인트 이미지 참조) */
-      --neon-blue: #00ffff;      /* 형광 블루 (사이버펑크 느낌) */
-      --terminal-bg: #1a1a1a;    /* 터미널 박스 배경색 */
+      /* 디스코드 & 레트로 퓨처 컬러 팔레트 */
+      --bg-color: #111214;       /* 아주 깊은 다크 그레이 */
+      --card-bg: #1e1f22;        /* 카드 배경색 */
+      --text-main: #ffffff;      /* 메인 텍스트 */
+      --text-sub: #b5bac1;       /* 서브 텍스트 (회색) */
+      --accent-pink: #f47fff;    /* 세련된 네온 핑크 */
+      --accent-green: #57f287;   /* 디스코드 그린 */
+      --border-color: #3f4147;   /* 옅은 테두리 */
     }
 
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Orbitron', sans-serif; /* 기본 폰트는 미래적인 느낌 */
-      line-height: 1.6;
-      background-image: 
-        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-      background-size: 20px 20px; /* 배경에 은은한 그리드 패턴 추가 */
+      color: var(--text-main);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
+      letter-spacing: -0.02em; /* 세련된 자간 */
     }
 
-    a {
-      color: var(--neon-blue);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      color: var(--neon-pink);
-      text-shadow: 0 0 5px var(--neon-pink);
+    /* 배경에 아주 은은한 모눈종이 패턴 (체크포인트 느낌) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+      z-index: -1;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      border: 2px solid var(--neon-pink);
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
-      background-color: rgba(10, 10, 10, 0.9); /* 배경을 살짝 투명하게 */
+      max-width: 720px; /* 너무 넓지 않게 집중도 향상 */
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    /* --- 타이포그래피 & 헤더 --- */
-    h1, h2, h3 {
-      font-family: 'Press Start 2P', cursive; /* 제목은 픽셀 폰트 사용 */
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    /* --- 링크 스타일 --- */
+    a {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-green);
+      transition: all 0.2s ease;
+    }
+    a:hover {
+      background-color: rgba(87, 242, 135, 0.1);
+      color: var(--accent-green);
     }
 
-    h1 {
-      color: var(--neon-pink);
-      text-shadow: 2px 2px var(--neon-blue), -2px -2px var(--neon-green); /* 글리치 효과 흉내 */
-      margin-bottom: 30px;
+    /* --- 헤더 & 프로필 --- */
+    header {
+      margin-bottom: 60px;
     }
 
-    h2 {
-      color: var(--neon-green);
-      border-bottom: 2px dashed var(--neon-green);
-      padding-bottom: 10px;
-      margin-top: 50px;
-    }
-
-    h3 {
-      color: var(--neon-blue);
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
-
-    /* --- 프로필 섹션 --- */
-    .profile-container {
+    .profile-card {
       display: flex;
       align-items: center;
       gap: 30px;
-      margin-bottom: 40px;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      /* 살짝 떠있는 느낌 */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid var(--neon-pink);
-      box-shadow: 0 0 20px var(--neon-pink);
-    }
-    
-    /* 이미지 글리치 효과 (간단한 버전) */
-    .glitch-effect:hover {
-        animation: glitch-anim 0.5s infinite;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; /* 완전 원형 */
+      object-fit: cover;
+      border: 2px solid var(--accent-pink); /* 핑크 포인트 */
     }
 
-    @keyframes glitch-anim {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
+    .profile-info h1 {
+      margin: 0 0 10px 0;
+      font-size: 1.8rem;
+      font-weight: 700;
     }
 
-    .profile-info ul {
-      list-style: none;
-      padding: 0;
+    .profile-desc {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
     }
-    .profile-info li {
-      margin-bottom: 10px;
+
+    .social-links {
+      display: flex;
+      gap: 15px;
       font-size: 0.9rem;
     }
 
-    .cyber-text {
-        font-weight: bold;
-        color: var(--neon-blue);
-        margin-bottom: 15px;
-        font-size: 1.1rem;
+    /* --- 섹션 공통 --- */
+    section {
+      margin-bottom: 80px;
     }
 
-    /* --- 터미널 스타일 박스 --- */
-    .terminal-box {
-      background-color: var(--terminal-bg);
-      border: 1px solid var(--neon-green);
-      padding: 20px;
-      font-family: 'Courier New', Courier, monospace; /* 터미널 폰트 */
-      color: var(--neon-green);
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-pink); /* 섹션 제목만 핑크 포인트 */
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .terminal-box p {
-        margin: 5px 0;
+    
+    /* 제목 옆에 작은 장식 */
+    h2::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 24px;
+      background-color: var(--accent-pink);
+      border-radius: 3px;
     }
 
-    /* --- 프로젝트 섹션 --- */
+    /* --- 프로젝트 카드 그리드 --- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-green); /* 호버 시 그린 포인트 */
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .project-meta {
-        font-size: 0.9rem;
-        color: #aaa;
-        margin-bottom: 20px;
-    }
-    
-    .details-box {
-        background-color: rgba(255, 255, 255, 0.05);
-        border-left: 4px solid var(--neon-blue);
-        padding: 15px 20px;
-        margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      background: rgba(255,255,255,0.05);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: normal;
     }
 
-    .tech-stack {
-        margin-top: 15px;
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-bottom: 15px;
     }
+
     .tech-stack span {
-        display: inline-block;
-        background-color: var(--terminal-bg);
-        border: 1px solid var(--neon-blue);
-        color: var(--neon-blue);
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        margin-right: 5px;
-        margin-bottom: 5px;
+      font-size: 0.8rem;
+      color: var(--accent-green);
+      background: rgba(87, 242, 135, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-right: 5px;
     }
 
-    /* --- 타임라인 섹션 --- */
-    .timeline-item {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 30px;
-        border-left: 2px solid var(--neon-pink);
-    }
-    .timeline-item::before {
-        content: attr(data-year);
-        position: absolute;
-        left: -80px;
-        top: 0;
-        font-family: 'Press Start 2P';
-        color: var(--neon-pink);
-        font-size: 0.8rem;
-    }
-    .timeline-item ul {
-        margin: 0;
-        padding-left: 20px;
+    /* --- 타임라인 & 리스트 --- */
+    .simple-list {
+      list-style: none;
+      padding: 0;
     }
 
-    /* --- 기타 스타일 --- */
-    .neon-divider {
-        border: none;
-        height: 2px;
-        background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
-        margin: 50px 0;
+    .simple-list li {
+      margin-bottom: 12px;
+      padding-left: 15px;
+      position: relative;
+      color: var(--text-sub);
     }
 
-    .highlight {
-        color: var(--neon-green);
-        font-weight: bold;
+    .simple-list li::before {
+      content: '•';
+      color: var(--accent-green);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
     }
     
-    /* 반응형 처리 */
-    @media (max-width: 768px) {
-        .profile-container {
-            flex-direction: column;
-            text-align: center;
-        }
-        .timeline-item::before {
-            position: static;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .timeline-item {
-            padding-left: 0;
-            border-left: none;
-        }
+    .simple-list strong {
+        color: var(--text-main);
+    }
+
+    /* 모바일 대응 */
+    @media (max-width: 600px) {
+      .profile-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .social-links {
+        justify-content: center;
+      }
     }
   </style>
 </head>

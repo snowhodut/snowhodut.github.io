@@ -7,144 +7,152 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
   <style>
+    /* --- 컬러 팔레트 & 기본 설정 --- */
     :root {
-      /* 디스코드 & 레트로 퓨처 컬러 팔레트 */
-      --bg-color: #111214;       /* 아주 깊은 다크 그레이 */
-      --card-bg: #1e1f22;        /* 카드 배경색 */
-      --text-main: #ffffff;      /* 메인 텍스트 */
-      --text-sub: #b5bac1;       /* 서브 텍스트 (회색) */
-      --accent-pink: #f47fff;    /* 세련된 네온 핑크 */
-      --accent-green: #57f287;   /* 디스코드 그린 */
-      --border-color: #3f4147;   /* 옅은 테두리 */
+      --bg-color: #000000;       /* 완전 검은색 (Deep Black) */
+      --card-bg: #111111;        /* 아주 어두운 회색 (카드 배경) */
+      --text-main: #ffffff;      /* 순백색 텍스트 */
+      --text-sub: #a0a0a0;       /* 회색 보조 텍스트 */
+      --accent-pink: #ff79c6;    /* 핫핑크 포인트 */
+      --accent-green: #50fa7b;   /* 네온 그린 포인트 */
     }
 
     body {
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       background-color: var(--bg-color);
       color: var(--text-main);
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       line-height: 1.7;
-      letter-spacing: -0.02em; /* 세련된 자간 */
-    }
-
-    /* 배경에 아주 은은한 모눈종이 패턴 (체크포인트 느낌) */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
-      pointer-events: none;
-      z-index: -1;
+      letter-spacing: -0.01em;
     }
 
     .container {
-      max-width: 720px; /* 너무 넓지 않게 집중도 향상 */
-      margin: 60px auto;
-      padding: 0 20px;
+      max-width: 680px; /* 미니멀한 느낌을 위해 폭을 좁게 */
+      margin: 0 auto;
     }
 
     /* --- 링크 스타일 --- */
     a {
       color: var(--text-main);
       text-decoration: none;
-      border-bottom: 1px solid var(--accent-green);
+      border-bottom: 1px solid var(--accent-pink); /* 핑크색 밑줄 */
       transition: all 0.2s ease;
     }
     a:hover {
-      background-color: rgba(87, 242, 135, 0.1);
-      color: var(--accent-green);
+      background-color: rgba(255, 121, 198, 0.1);
+      color: var(--accent-pink);
     }
 
-    /* --- 헤더 & 프로필 --- */
-    header {
-      margin-bottom: 60px;
-    }
-
+    /* --- 헤더 & 프로필 카드 (핵심 디자인!) --- */
     .profile-card {
       display: flex;
       align-items: center;
       gap: 30px;
       background: var(--card-bg);
       padding: 30px;
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      /* 살짝 떠있는 느낌 */
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border-radius: 20px; /* 둥근 모서리 */
+      border: 2px solid var(--accent-pink); /* 핑크색 테두리 */
+      position: relative;
+      overflow: hidden; /* 구체가 카드 밖으로 나가지 않게 */
+      margin-bottom: 60px;
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%; /* 완전 원형 */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--accent-pink); /* 핑크 포인트 */
+      border: 2px solid var(--accent-green); /* 프로필 사진은 그린 테두리 */
+      z-index: 2; /* 구체보다 위에 표시 */
+    }
+
+    .profile-info {
+      flex: 1;
+      z-index: 2;
     }
 
     .profile-info h1 {
       margin: 0 0 10px 0;
       font-size: 1.8rem;
       font-weight: 700;
+      letter-spacing: -0.03em;
     }
 
     .profile-desc {
       color: var(--text-sub);
       font-size: 0.95rem;
       margin-bottom: 15px;
+      line-height: 1.5;
     }
 
     .social-links {
       display: flex;
-      gap: 15px;
-      font-size: 0.9rem;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+    .social-links a {
+        border-bottom: none;
+        background: rgba(255, 121, 198, 0.1);
+        padding: 4px 10px;
+        border-radius: 20px;
+        color: var(--accent-pink);
+        font-weight: 600;
+    }
+    .social-links a:hover {
+        background: var(--accent-pink);
+        color: var(--bg-color);
     }
 
-    /* --- 섹션 공통 --- */
+    /* --- 3D 와이어프레임 구체 애니메이션 --- */
+    .wireframe-sphere {
+        position: absolute;
+        top: 50%;
+        right: -50px; /* 카드 오른쪽에 걸치게 배치 */
+        transform: translateY(-50%);
+        width: 200px;
+        height: 200px;
+        opacity: 0.6; /* 은은하게 */
+        z-index: 1;
+        pointer-events: none;
+        /* SVG로 만든 와이어프레임 이미지 */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff79c6' stroke-width='1'%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='30'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='60'/%3E%3Cellipse cx='100' cy='100' rx='30' ry='90'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='90'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: spin 20s linear infinite; /* 천천히 회전 */
+    }
+    @keyframes spin {
+        from { transform: translateY(-50%) rotate(0deg); }
+        to { transform: translateY(-50%) rotate(360deg); }
+    }
+
+    /* --- 섹션 공통 스타일 --- */
     section {
-      margin-bottom: 80px;
+      margin-bottom: 70px;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--accent-pink); /* 섹션 제목만 핑크 포인트 */
+      color: var(--accent-green); /* 섹션 제목은 그린 */
       margin-bottom: 25px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    /* 제목 옆에 작은 장식 */
-    h2::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 24px;
-      background-color: var(--accent-pink);
-      border-radius: 3px;
+      text-transform: uppercase; /* 대문자로 세련되게 */
+      letter-spacing: 0.05em;
     }
 
-    /* --- 프로젝트 카드 그리드 --- */
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
+    /* --- 프로젝트 카드 스타일 --- */
     .project-card {
       background: var(--card-bg);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 25px;
-      border: 1px solid var(--border-color);
-      transition: transform 0.2s, border-color 0.2s;
+      border: 1px solid #222; /* 아주 옅은 테두리 */
+      margin-bottom: 25px;
+      transition: all 0.2s ease;
     }
 
     .project-card:hover {
+      border-color: var(--accent-pink); /* 호버 시 핑크 테두리 */
       transform: translateY(-3px);
-      border-color: var(--accent-green); /* 호버 시 그린 포인트 */
     }
 
     .project-title {
@@ -157,63 +165,88 @@
     }
 
     .project-meta {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      background: rgba(255,255,255,0.05);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-weight: normal;
+      font-size: 0.75rem;
+      color: var(--accent-pink);
+      background: rgba(255, 121, 198, 0.1);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
     }
 
     .project-desc {
       font-size: 0.95rem;
       color: var(--text-sub);
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     .tech-stack span {
       font-size: 0.8rem;
       color: var(--accent-green);
-      background: rgba(87, 242, 135, 0.1);
-      padding: 4px 8px;
-      border-radius: 4px;
-      margin-right: 5px;
+      border: 1px solid var(--accent-green);
+      padding: 4px 10px;
+      border-radius: 20px; /* 둥근 뱃지 스타일 */
+      margin-right: 6px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    
+    .project-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
     }
 
-    /* --- 타임라인 & 리스트 --- */
+    /* --- 심플 리스트 스타일 (경력/학력) --- */
     .simple-list {
       list-style: none;
       padding: 0;
     }
 
     .simple-list li {
-      margin-bottom: 12px;
-      padding-left: 15px;
+      margin-bottom: 15px;
+      padding-left: 20px;
       position: relative;
       color: var(--text-sub);
     }
 
     .simple-list li::before {
-      content: '•';
-      color: var(--accent-green);
+      content: ''; /* 점 대신 작은 핑크색 사각형 */
       position: absolute;
       left: 0;
-      font-weight: bold;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-pink);
+      border-radius: 1px;
     }
     
     .simple-list strong {
         color: var(--text-main);
+        font-weight: 600;
     }
 
     /* 모바일 대응 */
     @media (max-width: 600px) {
+      body { padding: 30px 15px; }
       .profile-card {
         flex-direction: column;
         text-align: center;
+        padding: 25px;
+        gap: 20px;
       }
-      .social-links {
-        justify-content: center;
+      .wireframe-sphere {
+        /* 모바일에서는 구체 위치 조정 */
+        width: 150px; height: 150px;
+        top: auto; bottom: -30px; right: -30px;
+        transform: none;
+        animation: spin-mobile 20s linear infinite;
       }
+       @keyframes spin-mobile {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .social-links { justify-content: center; }
     }
   </style>
 </head>

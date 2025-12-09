@@ -4,249 +4,200 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
   <style>
-    /* --- 컬러 팔레트 & 기본 설정 --- */
     :root {
-      --bg-color: #000000;       /* 완전 검은색 (Deep Black) */
-      --card-bg: #111111;        /* 아주 어두운 회색 (카드 배경) */
-      --text-main: #ffffff;      /* 순백색 텍스트 */
-      --text-sub: #a0a0a0;       /* 회색 보조 텍스트 */
-      --accent-pink: #ff79c6;    /* 핫핑크 포인트 */
-      --accent-green: #50fa7b;   /* 네온 그린 포인트 */
+      --bg-color: #000000;
+      --window-bg: #0a0a0a;
+      --title-bar-color: #ff91e0; /* 3번 사진의 예쁜 핑크색 */
+      --title-text: #000000;
+      --text-main: #ffffff;
+      --text-sub: #b0b0b0;
+      --accent-green: #57f287;
+      --border-color: #ff91e0;
     }
 
     body {
       margin: 0;
-      padding: 40px 20px;
+      padding: 20px;
       background-color: var(--bg-color);
       color: var(--text-main);
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-      line-height: 1.7;
-      letter-spacing: -0.01em;
+      font-family: 'Pretendard', sans-serif;
+      /* 배경: 5번 사진 같은 핑크색 모눈종이 느낌을 흑백 반전으로 적용 */
+      background-image: 
+        linear-gradient(rgba(255, 145, 224, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 145, 224, 0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
     .container {
-      max-width: 680px; /* 미니멀한 느낌을 위해 폭을 좁게 */
+      max-width: 800px;
       margin: 0 auto;
+      display: grid;
+      gap: 30px; /* 창 사이 간격 */
     }
 
     /* --- 링크 스타일 --- */
     a {
-      color: var(--text-main);
+      color: var(--title-bar-color);
       text-decoration: none;
-      border-bottom: 1px solid var(--accent-pink); /* 핑크색 밑줄 */
-      transition: all 0.2s ease;
+      border-bottom: 1px dashed var(--title-bar-color);
     }
     a:hover {
-      background-color: rgba(255, 121, 198, 0.1);
-      color: var(--accent-pink);
+      background-color: var(--title-bar-color);
+      color: #000;
     }
 
-    /* --- 헤더 & 프로필 카드 (핵심 디자인!) --- */
-    .profile-card {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 20px; /* 둥근 모서리 */
-      border: 2px solid var(--accent-pink); /* 핑크색 테두리 */
+    /* --- 핵심: 윈도우 창 스타일 (3번 사진 구현) --- */
+    .window {
+      background: var(--window-bg);
+      border: 2px solid var(--title-bar-color);
+      box-shadow: 8px 8px 0px rgba(255, 145, 224, 0.3); /* 그림자를 딱딱하게 */
       position: relative;
-      overflow: hidden; /* 구체가 카드 밖으로 나가지 않게 */
-      margin-bottom: 60px;
     }
 
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent-green); /* 프로필 사진은 그린 테두리 */
-      z-index: 2; /* 구체보다 위에 표시 */
-    }
-
-    .profile-info {
-      flex: 1;
-      z-index: 2;
-    }
-
-    .profile-info h1 {
-      margin: 0 0 10px 0;
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .profile-desc {
-      color: var(--text-sub);
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      font-size: 0.85rem;
-    }
-    .social-links a {
-        border-bottom: none;
-        background: rgba(255, 121, 198, 0.1);
-        padding: 4px 10px;
-        border-radius: 20px;
-        color: var(--accent-pink);
-        font-weight: 600;
-    }
-    .social-links a:hover {
-        background: var(--accent-pink);
-        color: var(--bg-color);
-    }
-
-    /* --- 3D 와이어프레임 구체 애니메이션 --- */
-    .wireframe-sphere {
-        position: absolute;
-        top: 50%;
-        right: -50px; /* 카드 오른쪽에 걸치게 배치 */
-        transform: translateY(-50%);
-        width: 200px;
-        height: 200px;
-        opacity: 0.6; /* 은은하게 */
-        z-index: 1;
-        pointer-events: none;
-        /* SVG로 만든 와이어프레임 이미지 */
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff79c6' stroke-width='1'%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='30'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='60'/%3E%3Cellipse cx='100' cy='100' rx='30' ry='90'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='90'/%3E%3C/g%3E%3C/svg%3E");
-        background-size: contain;
-        background-repeat: no-repeat;
-        animation: spin 20s linear infinite; /* 천천히 회전 */
-    }
-    @keyframes spin {
-        from { transform: translateY(-50%) rotate(0deg); }
-        to { transform: translateY(-50%) rotate(360deg); }
-    }
-
-    /* --- 섹션 공통 스타일 --- */
-    section {
-      margin-bottom: 70px;
-    }
-
-    h2 {
+    /* 윈도우 상단 제목 표시줄 */
+    .title-bar {
+      background: var(--title-bar-color);
+      color: var(--title-text);
+      padding: 8px 12px;
+      font-family: 'VT323', monospace;
       font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--accent-green); /* 섹션 제목은 그린 */
-      margin-bottom: 25px;
-      text-transform: uppercase; /* 대문자로 세련되게 */
-      letter-spacing: 0.05em;
-    }
-
-    /* --- 프로젝트 카드 스타일 --- */
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 25px;
-      border: 1px solid #222; /* 아주 옅은 테두리 */
-      margin-bottom: 25px;
-      transition: all 0.2s ease;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent-pink); /* 호버 시 핑크 테두리 */
-      transform: translateY(-3px);
-    }
-
-    .project-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 0 0 10px 0;
+      font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--title-bar-color);
     }
 
-    .project-meta {
-      font-size: 0.75rem;
-      color: var(--accent-pink);
-      background: rgba(255, 121, 198, 0.1);
-      padding: 3px 8px;
-      border-radius: 12px;
-      font-weight: 600;
-    }
-
-    .project-desc {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      margin-bottom: 18px;
-    }
-
-    .tech-stack span {
-      font-size: 0.8rem;
-      color: var(--accent-green);
-      border: 1px solid var(--accent-green);
-      padding: 4px 10px;
-      border-radius: 20px; /* 둥근 뱃지 스타일 */
-      margin-right: 6px;
+    /* 제목 표시줄 오른쪽 버튼 (X, □, _) */
+    .window-controls span {
       display: inline-block;
-      margin-bottom: 6px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #000;
+      background: #fff;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .window-controls span:last-child { background: #ff5f56; } /* 닫기 버튼 빨강 */
+
+    .window-content {
+      padding: 25px;
+    }
+
+    /* --- 프로필 영역 (로그인 창 컨셉) --- */
+    .login-layout {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .profile-img-box {
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--accent-green);
+      padding: 5px;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     
-    .project-link {
-        display: inline-block;
-        margin-top: 10px;
-        font-size: 0.9rem;
-        font-weight: 600;
+    /* 가짜 로그인 입력창 스타일 */
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .fake-label {
+      display: block;
+      font-family: 'VT323', monospace;
+      color: var(--title-bar-color);
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .fake-input {
+      background: #222;
+      border: 1px solid var(--text-sub);
+      color: #fff;
+      padding: 8px 15px;
+      width: 100%;
+      font-family: 'Courier New', monospace;
+      box-sizing: border-box; /* 패딩 포함 */
+    }
+    .login-btn {
+      background: var(--title-bar-color);
+      color: #000;
+      border: none;
+      padding: 8px 20px;
+      font-family: 'VT323', monospace;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
     }
 
-    /* --- 심플 리스트 스타일 (경력/학력) --- */
-    .simple-list {
+    /* --- 리스트 스타일 --- */
+    ul {
       list-style: none;
       padding: 0;
     }
-
-    .simple-list li {
-      margin-bottom: 15px;
+    li {
+      margin-bottom: 10px;
       padding-left: 20px;
       position: relative;
-      color: var(--text-sub);
     }
-
-    .simple-list li::before {
-      content: ''; /* 점 대신 작은 핑크색 사각형 */
+    li::before {
+      content: '>';
       position: absolute;
       left: 0;
-      top: 10px;
-      width: 6px;
-      height: 6px;
-      background-color: var(--accent-pink);
-      border-radius: 1px;
+      color: var(--accent-green);
+      font-weight: bold;
     }
-    
-    .simple-list strong {
-        color: var(--text-main);
-        font-weight: 600;
+
+    /* --- 프로젝트 아이템 --- */
+    .project-item {
+      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.03);
     }
+    .project-title {
+      color: var(--accent-green);
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .tech-tag {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+      margin-right: 4px;
+      font-family: 'VT323', monospace;
+    }
+
+    /* --- 3D 구체 (장식용) --- */
+    .wireframe-sphere {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='30'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='60'/%3E%3Cellipse cx='100' cy='100' rx='30' ry='90'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='90'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: spin 15s linear infinite;
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     /* 모바일 대응 */
     @media (max-width: 600px) {
-      body { padding: 30px 15px; }
-      .profile-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-        gap: 20px;
-      }
-      .wireframe-sphere {
-        /* 모바일에서는 구체 위치 조정 */
-        width: 150px; height: 150px;
-        top: auto; bottom: -30px; right: -30px;
-        transform: none;
-        animation: spin-mobile 20s linear infinite;
-      }
-       @keyframes spin-mobile {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-      .social-links { justify-content: center; }
+      .login-layout { flex-direction: column; text-align: center; }
+      .window-controls { display: none; } /* 모바일에서 버튼 숨김 */
     }
   </style>
 </head>

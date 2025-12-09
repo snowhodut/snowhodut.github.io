@@ -15,7 +15,7 @@ title: Portfolio
   <div class="window-content">
     <div class="login-layout">
       <div class="profile-img-box">
-        <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Cookie&backgroundColor=transparent" class="profile-pixel-art" alt="Pixel Art Girl">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS0lEQVR4Xu2bW2wUVRzG/7Nls9tutwW6tEALLaUUiohXbIxETfACJpoQExRiIj5o1Ad90z6Y+OCDD0aDT4QYEyFqBCNqMDxQESFRg4qUS6Fst6W07C4t7bZ7m5m5z/83s3vY3Zl2Z3ZmdjrnkzY759T93bNzvjP73wE6y/9f2iBge0/vX76a/u1qK8aFw6H6N10D9lW09xR73H8aYq5bS347nF+8/FkZ3T07TfS1XQMWU3R40Hh5X33y1/mO4iZcKBTSMpnMoq/tGgCBw93Vn3fXJD8r8br2tFak3zhy7uP3xye8zS+s31S645s/L7h5e3Q1iGqHj0+V0rW3XQM6670/3V1b9H1nVc7Oa+Ff/79Q4l6J3Lw7sVnSgGj7g/x4IeA93lFbuqGqIN40NpeH68NTOcPD23s0Qc4tE9A3E3q3sTzxto+o7P40/GqKqI+o1/S4aZmA6mJvpLO6sB6X2a79b/98Y5yod2uCnFsmgJz3UEdlYm11Pj5d6HWh43gYrs55863e43nTMgGy2990VqU/2F5VvJEc17/i99xYpP6r3tLjpnUColXeh52R1MfJskC0wO3A9g9PwZXhG+6iPqYe1eOmZQJ4/LutMnlwd11lYmNe7s7yvNn5v5A7+e6q4d3e66ZlAqoL8X3JytRHiRJfLImn2/0O3Apm5lt7/N5mSf9MywSw3u8/uC35xW1lxVvJ0ZkZf+o6zKj3qIf0uGmdgL21hV8d3l5z4EBPXQreH/R78M0Fv2/T7xW50gXU1LRMQP3mou/3bi37YVv1qriP6L3B4DSc+W3CXUydT92lx03LBJSHXH92Vqf231GZt5tU/b3B1S4M3XSnUveou/S4aZ1A0n8qWZn6aFtF/m4Sj9c9F72Aczem3c07/N5mSf/MOgGy1/f5loryo7uqV+1K3h0z09/w7FXY9WnEXUzdpe7S46ZlAkr87vMddYXHHt6xdl+oIPd8n8+J0/8k5lt79LhpnYDNpa5fD2ytPby5IphE9d/jX/XAyOVYInWfuk+Pm5YJoPpvJitSH22rKNhDoq+v270aRs5Ou1P3qfv0uGmdANK8P1lZ8MHe7TX7Svx551H9h0YmYWjovLu5U93dLOkfbRBAq+16YEvlkf17q1Y3l3rd51H9f/o94Z38xXdrkpxbJqDE5/ygva7oxNH22n03B3K+7fd5cPrPuLe1U92tx03rBJD+M8lI6qNkRWAfGf12d/gcuB68kW/tUfercfO/JkDKd54/vLPySHt1/m5yV3h+1puGz/6MuVu3qXv1uGmZAPp4P9hSVfjV4baqnY3F7iZUn791IuFu7Vb3a4KceyAAf3j39qq9d5T5zzYXu/D8jDcNZ07ccbfuVPfrcdMyAb6C3C/27qg+2lYRiJJR72a/A9evRua73e5+TZBzywQ0Fnk/aIskjh5oqt1zU6HrfJ/fgVOnJtzte9QDepv/NQFkzJ901qQ+2lYZ3F/oc59F9Z+enHH7i1rU/XrctEwAPf+7XTVFnxxsq1rdWOhqQvVHRsLw2elJd/sedb8aN/9rAib+AQDqRrg4fW0DAAAAAElFTkSuQmCC" class="profile-pixel-art" alt="Pixel Art Girl">
       </div>
       <div style="flex: 1;">
         <div class="input-group">
@@ -51,6 +51,7 @@ title: Portfolio
       <p style="font-size: 1.1rem; line-height: 1.6;">
         <strong>"Attacker's View Security Researcher"</strong><br>
         안녕하세요, 이화여대 컴퓨터공학과 4학년 송연우입니다.<br>
+        시스템의 방어막을 이해하기 위해 공격자의 시선을 연구합니다.
       </p>
       <br>
       <p style="font-family: 'VT323'; color: #ff91e0;">

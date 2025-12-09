@@ -6,12 +6,16 @@ title: Portfolio
 <div class="window">
   <div class="title-bar">
     <span class="title-text">USER_LOGIN.exe</span>
-    <div class="window-controls"><span></span><span></span><span></span></div>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span class="close-btn">×</span>
+    </div>
   </div>
   <div class="window-content">
     <div class="login-layout">
       <div class="profile-img-box">
-        <img src="assets/profile.png" class="profile-img" alt="송연우">
+        <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Cookie&backgroundColor=transparent" class="profile-pixel-art" alt="Pixel Art Girl">
       </div>
       <div style="flex: 1;">
         <div class="input-group">
@@ -31,11 +35,16 @@ title: Portfolio
 <div class="window">
   <div class="title-bar">
     <span class="title-text">SYSTEM_INFO.txt</span>
-    <div class="window-controls"><span></span><span></span><span></span></div>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span class="close-btn">×</span>
+    </div>
   </div>
   <div class="window-content" style="display: flex; gap: 20px; align-items: center;">
     <div style="text-align: center; min-width: 150px;">
-       <div class="wireframe-sphere"></div>
+       <img class="sphere-graphic" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='2'%3E%3Ccircle cx='100' cy='100' r='95'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='25'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='55'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='85'/%3E%3Cellipse cx='100' cy='100' rx='25' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='55' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='85' ry='95'/%3E%3Cline x1='100' y1='5' x2='100' y2='195'/%3E%3Cline x1='5' y1='100' x2='195' y2='100'/%3E%3C/g%3E%3C/svg%3E" alt="3D Sphere">
+       
        <span style="font-family: 'VT323'; color: var(--accent-green);">Connect...</span>
     </div>
     <div>
@@ -55,7 +64,11 @@ title: Portfolio
 <div class="window">
   <div class="title-bar">
     <span class="title-text">C:\PROJECTS\LIST</span>
-    <div class="window-controls"><span></span><span></span><span></span></div>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span class="close-btn">×</span>
+    </div>
   </div>
   <div class="window-content">
     <div class="project-item">
@@ -83,7 +96,11 @@ title: Portfolio
 <div class="window">
   <div class="title-bar">
     <span class="title-text">HISTORY_LOG</span>
-    <div class="window-controls"><span></span><span></span><span></span></div>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span class="close-btn">×</span>
+    </div>
   </div>
   <div class="window-content">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -110,7 +127,11 @@ title: Portfolio
 <div class="window">
   <div class="title-bar">
     <span class="title-text">MY_LINKS</span>
-    <div class="window-controls"><span></span><span></span><span></span></div>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span class="close-btn">×</span>
+    </div>
   </div>
   <div class="window-content" style="text-align: center;">
     <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">

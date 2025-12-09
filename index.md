@@ -7,15 +7,15 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">USER_LOGIN.exe</span>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span class="close-btn">×</span>
+      <span></span>
+      <span></span>
+      <span class="close-btn"></span>
     </div>
   </div>
   <div class="window-content">
     <div class="login-layout">
       <div class="profile-img-box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS0lEQVR4Xu2bW2wUVRzG/7Nls9tutwW6tEALLaUUiohXbIxETfACJpoQExRiIj5o1Ad90z6Y+OCDD0aDT4QYEyFqBCNqMDxQESFRg4qUS6Fst6W07C4t7bZ7m5m5z/83s3vY3Zl2Z3ZmdjrnkzY759T93bNzvjP73wE6y/9f2iBge0/vX76a/u1qK8aFw6H6N10D9lW09xR73H8aYq5bS347nF+8/FkZ3T07TfS1XQMWU3R40Hh5X33y1/mO4iZcKBTSMpnMoq/tGgCBw93Vn3fXJD8r8br2tFak3zhy7uP3xye8zS+s31S645s/L7h5e3Q1iGqHj0+V0rW3XQM6670/3V1b9H1nVc7Oa+Ff/79Q4l6J3Lw7sVnSgGj7g/x4IeA93lFbuqGqIN40NpeH68NTOcPD23s0Qc4tE9A3E3q3sTzxto+o7P40/GqKqI+o1/S4aZmA6mJvpLO6sB6X2a79b/98Y5yod2uCnFsmgJz3UEdlYm11Pj5d6HWh43gYrs55863e43nTMgGy2990VqU/2F5VvJEc17/i99xYpP6r3tLjpnUColXeh52R1MfJskC0wO3A9g9PwZXhG+6iPqYe1eOmZQJ4/LutMnlwd11lYmNe7s7yvNn5v5A7+e6q4d3e66ZlAqoL8X3JytRHiRJfLImn2/0O3Apm5lt7/N5mSf9MywSw3u8/uC35xW1lxVvJ0ZkZf+o6zKj3qIf0uGmdgL21hV8d3l5z4EBPXQreH/R78M0Fv2/T7xW50gXU1LRMQP3mou/3bi37YVv1qriP6L3B4DSc+W3CXUydT92lx03LBJSHXH92Vqf231GZt5tU/b3B1S4M3XSnUveou/S4aZ1A0n8qWZn6aFtF/m4Sj9c9F72Aczem3c07/N5mSf/MOgGy1/f5loryo7uqV+1K3h0z09/w7FXY9WnEXUzdpe7S46ZlAkr87vMddYXHHt6xdl+oIPd8n8+J0/8k5lt79LhpnYDNpa5fD2ytPby5IphE9d/jX/XAyOVYInWfuk+Pm5YJoPpvJitSH22rKNhDoq+v270aRs5Ou1P3qfv0uGmdANK8P1lZ8MHe7TX7Svx551H9h0YmYWjovLu5U93dLOkfbRBAq+16YEvlkf17q1Y3l3rd51H9f/o94Z38xXdrkpxbJqDE5/ygva7oxNH22n03B3K+7fd5cPrPuLe1U92tx03rBJD+M8lI6qNkRWAfGf12d/gcuB68kW/tUfercfO/JkDKd54/vLPySHt1/m5yV3h+1puGz/6MuVu3qXv1uGmZAPp4P9hSVfjV4baqnY3F7iZUn791IuFu7Vb3a4KceyAAf3j39qq9d5T5zzYXu/D8jDcNZ07ccbfuVPfrcdMyAb6C3C/27qg+2lYRiJJR72a/A9evRua73e5+TZBzywQ0Fnk/aIskjh5oqt1zU6HrfJ/fgVOnJtzte9QDepv/NQFkzJ901qQ+2lYZ3F/oc59F9Z+enHH7i1rU/XrctEwAPf+7XTVFnxxsq1rdWOhqQvVHRsLw2elJd/sedb8aN/9rAib+AQDqRrg4fW0DAAAAAElFTkSuQmCC" class="profile-pixel-art" alt="Pixel Art Girl">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABCFBMVEUAAAD///+ZmZlmZmYzMzMAAADq6ur39/fMzMzLy8v7+/v29vbExMTs7OxfX1/d3d3m5ubz8/Po6OhtbW3W1tbIyMjDw8O9vb2ysrKnp6eZmZmRkZFSUlJiYmJcXFxMTExERERmZmYzMzMAAAAAAAD///+ZmZlmZmYzMzMAAADq6ur39/fMzMzLy8v7+/v29vbExMTs7OxfX1/d3d3m5ubz8/Po6OhtbW3W1tbIyMjDw8O9vb2ysrKnp6eZmZmRkZFSUlJiYmJcXFxMTExERERmZmYzMzMAAAAAAAAAAAD///+ZmZlmZmYzMzMAAAD///+7u7t0dHTNfF4SAAAALnRSTlMA+gX7Avz6+vv29vL18vLw7+7t7Ovq6eXj4uHg397d29nW1LKxrKqjf315d3JpI/7HAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+kMDQoXOC2KzZwAAAFTSURBVFjD7ZfzcoMwDIZfQ0IIgZBS9v3f4Qod2M3eJtF2Nzt5P0xGsn0fWZb1LwX+K8BfAacCjHGsKq8x5rFq+yGg61oA877v+9Z1fR8QQsS2D2PMY9v2Q0DbtgDmfV3Xbeu6PgR47wHMe9/3b+/9EBDDEMA8DMPQhDAMQ0AI8T0AeZ5nIYT4HgB932d5nmd932cBtm0z53mebdvMBTiOY5zneRzHOQSUUjOllEopDQE110w111QzFGDblk3TNG3blk3TNA3BMAzLNE3LMAzLNE3LEJRSK6WUSim1UkqtlDIUoOta13Vd17Wua13XdQgIIW5CCCHEbQghhLgNAcYYY4wxxhhjjDHGGEMB3vs157z3fs05770fAnzfX/M8z/f9Nc/zfAiwbZt5nufZts08z/Ns22YuwHEc4zzP4ziOc57ncRznEFBKzZRSKqU0BPy3P/4FfAO7AXsV40gAAAAASUVORK5CYII=" class="profile-pixel-art" alt="Cute Pixel Girl">
       </div>
       <div style="flex: 1;">
         <div class="input-group">
@@ -36,15 +36,16 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">SYSTEM_INFO.txt</span>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span class="close-btn">×</span>
+      <span></span>
+      <span></span>
+      <span class="close-btn"></span>
     </div>
   </div>
   <div class="window-content" style="display: flex; gap: 20px; align-items: center;">
-    <div style="text-align: center; min-width: 150px;">
-       <img class="sphere-graphic" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='2'%3E%3Ccircle cx='100' cy='100' r='95'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='25'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='55'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='85'/%3E%3Cellipse cx='100' cy='100' rx='25' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='55' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='85' ry='95'/%3E%3Cline x1='100' y1='5' x2='100' y2='195'/%3E%3Cline x1='5' y1='100' x2='195' y2='100'/%3E%3C/g%3E%3C/svg%3E" alt="3D Sphere">
-       
+    <div style="text-align: center; min-width: 160px;">
+       <div class="sphere-container">
+         <img class="sphere-graphic" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='98'/%3E%3C!-- Longitude Lines (세로선) --%3E%3Cellipse cx='100' cy='100' rx='20' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='40' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='80' ry='98'/%3E%3Cline x1='100' y1='2' x2='100' y2='198'/%3E%3C!-- Latitude Lines (가로선 - 곡선) --%3E%3Cpath d='M4,100 Q100,100 196,100' /%3E%3Cpath d='M7,80 Q100,80 193,80' /%3E%3Cpath d='M15,60 Q100,60 185,60' /%3E%3Cpath d='M28,40 Q100,40 172,40' /%3E%3Cpath d='M45,20 Q100,20 155,20' /%3E%3Cpath d='M7,120 Q100,120 193,120' /%3E%3Cpath d='M15,140 Q100,140 185,140' /%3E%3Cpath d='M28,160 Q100,160 172,160' /%3E%3Cpath d='M45,180 Q100,180 155,180' /%3E%3C/g%3E%3C/svg%3E" alt="Wireframe Globe">
+       </div>
        <span style="font-family: 'VT323'; color: var(--accent-green);">Connect...</span>
     </div>
     <div>
@@ -66,9 +67,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">C:\PROJECTS\LIST</span>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span class="close-btn">×</span>
+      <span></span>
+      <span></span>
+      <span class="close-btn"></span>
     </div>
   </div>
   <div class="window-content">
@@ -98,9 +99,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">HISTORY_LOG</span>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span class="close-btn">×</span>
+      <span></span>
+      <span></span>
+      <span class="close-btn"></span>
     </div>
   </div>
   <div class="window-content">
@@ -129,9 +130,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">MY_LINKS</span>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span class="close-btn">×</span>
+      <span></span>
+      <span></span>
+      <span class="close-btn"></span>
     </div>
   </div>
   <div class="window-content" style="text-align: center;">

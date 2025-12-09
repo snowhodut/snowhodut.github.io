@@ -1,21 +1,21 @@
 ---
 layout: retro
-title: Portfolio
+title: 송연우 이력서
 ---
 
 <div class="window">
   <div class="title-bar">
     <span class="title-text">USER_LOGIN.exe</span>
     <div class="window-controls">
-      <span></span>
-      <span></span>
-      <span class="close-btn"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box close"></span>
     </div>
   </div>
   <div class="window-content">
     <div class="login-layout">
       <div class="profile-img-box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABCFBMVEUAAAD///+ZmZlmZmYzMzMAAADq6ur39/fMzMzLy8v7+/v29vbExMTs7OxfX1/d3d3m5ubz8/Po6OhtbW3W1tbIyMjDw8O9vb2ysrKnp6eZmZmRkZFSUlJiYmJcXFxMTExERERmZmYzMzMAAAAAAAD///+ZmZlmZmYzMzMAAADq6ur39/fMzMzLy8v7+/v29vbExMTs7OxfX1/d3d3m5ubz8/Po6OhtbW3W1tbIyMjDw8O9vb2ysrKnp6eZmZmRkZFSUlJiYmJcXFxMTExERERmZmYzMzMAAAAAAAAAAAD///+ZmZlmZmYzMzMAAAD///+7u7t0dHTNfF4SAAAALnRSTlMA+gX7Avz6+vv29vL18vLw7+7t7Ovq6eXj4uHg397d29nW1LKxrKqjf315d3JpI/7HAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+kMDQoXOC2KzZwAAAFTSURBVFjD7ZfzcoMwDIZfQ0IIgZBS9v3f4Qod2M3eJtF2Nzt5P0xGsn0fWZb1LwX+K8BfAacCjHGsKq8x5rFq+yGg61oA877v+9Z1fR8QQsS2D2PMY9v2Q0DbtgDmfV3Xbeu6PgR47wHMe9/3b+/9EBDDEMA8DMPQhDAMQ0AI8T0AeZ5nIYT4HgB932d5nmd932cBtm0z53mebdvMBTiOY5zneRzHOQSUUjOllEopDQE110w111QzFGDblk3TNG3blk3TNA3BMAzLNE3LMAzLNE3LEJRSK6WUSim1UkqtlDIUoOta13Vd17Wua13XdQgIIW5CCCHEbQghhLgNAcYYY4wxxhhjjDHGGEMB3vs157z3fs05770fAnzfX/M8z/f9Nc/zfAiwbZt5nufZts08z/Ns22YuwHEc4zzP4ziOc57ncRznEFBKzZRSKqU0BPy3P/4FfAO7AXsV40gAAAAASUVORK5CYII=" class="profile-pixel-art" alt="Cute Pixel Girl">
+        <div class="profile-pic"></div>
       </div>
       <div style="flex: 1;">
         <div class="input-group">
@@ -36,16 +36,14 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">SYSTEM_INFO.txt</span>
     <div class="window-controls">
-      <span></span>
-      <span></span>
-      <span class="close-btn"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box close"></span>
     </div>
   </div>
   <div class="window-content" style="display: flex; gap: 20px; align-items: center;">
-    <div style="text-align: center; min-width: 160px;">
-       <div class="sphere-container">
-         <img class="sphere-graphic" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='98'/%3E%3C!-- Longitude Lines (세로선) --%3E%3Cellipse cx='100' cy='100' rx='20' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='40' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='98'/%3E%3Cellipse cx='100' cy='100' rx='80' ry='98'/%3E%3Cline x1='100' y1='2' x2='100' y2='198'/%3E%3C!-- Latitude Lines (가로선 - 곡선) --%3E%3Cpath d='M4,100 Q100,100 196,100' /%3E%3Cpath d='M7,80 Q100,80 193,80' /%3E%3Cpath d='M15,60 Q100,60 185,60' /%3E%3Cpath d='M28,40 Q100,40 172,40' /%3E%3Cpath d='M45,20 Q100,20 155,20' /%3E%3Cpath d='M7,120 Q100,120 193,120' /%3E%3Cpath d='M15,140 Q100,140 185,140' /%3E%3Cpath d='M28,160 Q100,160 172,160' /%3E%3Cpath d='M45,180 Q100,180 155,180' /%3E%3C/g%3E%3C/svg%3E" alt="Wireframe Globe">
-       </div>
+    <div style="text-align: center; min-width: 180px;">
+       <div class="sphere-container"></div>
        <span style="font-family: 'VT323'; color: var(--accent-green);">Connect...</span>
     </div>
     <div>
@@ -67,9 +65,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">C:\PROJECTS\LIST</span>
     <div class="window-controls">
-      <span></span>
-      <span></span>
-      <span class="close-btn"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box close"></span>
     </div>
   </div>
   <div class="window-content">
@@ -99,9 +97,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">HISTORY_LOG</span>
     <div class="window-controls">
-      <span></span>
-      <span></span>
-      <span class="close-btn"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box close"></span>
     </div>
   </div>
   <div class="window-content">
@@ -130,9 +128,9 @@ title: Portfolio
   <div class="title-bar">
     <span class="title-text">MY_LINKS</span>
     <div class="window-controls">
-      <span></span>
-      <span></span>
-      <span class="close-btn"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box"></span>
+      <span class="btn-box close"></span>
     </div>
   </div>
   <div class="window-content" style="text-align: center;">

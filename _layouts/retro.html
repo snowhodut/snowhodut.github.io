@@ -8,24 +8,23 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   
   <style>
+    /* --- 변수 설정 --- */
     :root {
-      --bg-color: #000000;
-      --window-bg: #0a0a0a;
-      --title-bar-color: #ff91e0; /* 3번 사진의 예쁜 핑크색 */
-      --title-text: #000000;
-      --text-main: #ffffff;
-      --text-sub: #b0b0b0;
-      --accent-green: #57f287;
-      --border-color: #ff91e0;
+      --bg-color: #000000;       /* 전체 배경: 완전 검은색 */
+      --window-bg: #0a0a0a;      /* 창 배경: 아주 어두운 회색 */
+      --title-bar-color: #ff91e0; /* 포인트 컬러: 핑크 */
+      --text-main: #ffffff;      /* 메인 텍스트: 흰색 */
+      --accent-green: #57f287;   /* 강조 컬러: 네온 그린 */
     }
 
+    /* --- 기본 스타일 --- */
     body {
       margin: 0;
       padding: 20px;
       background-color: var(--bg-color);
       color: var(--text-main);
       font-family: 'Pretendard', sans-serif;
-      /* 배경: 5번 사진 같은 핑크색 모눈종이 느낌을 흑백 반전으로 적용 */
+      /* 배경에 은은한 핑크색 모눈종이 패턴 추가 */
       background-image: 
         linear-gradient(rgba(255, 145, 224, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 145, 224, 0.15) 1px, transparent 1px);
@@ -36,168 +35,123 @@
       max-width: 800px;
       margin: 0 auto;
       display: grid;
-      gap: 30px; /* 창 사이 간격 */
+      gap: 30px; /* 창 사이의 간격 */
     }
 
     /* --- 링크 스타일 --- */
     a {
       color: var(--title-bar-color);
       text-decoration: none;
-      border-bottom: 1px dashed var(--title-bar-color);
+      border-bottom: 1px dashed var(--title-bar-color); /* 핑크색 점선 밑줄 */
     }
     a:hover {
       background-color: var(--title-bar-color);
-      color: #000;
+      color: #000; /* 호버 시 배경 반전 */
     }
 
-    /* --- 핵심: 윈도우 창 스타일 (3번 사진 구현) --- */
+    /* --- 윈도우 창 스타일 (핵심!) --- */
     .window {
       background: var(--window-bg);
-      border: 2px solid var(--title-bar-color);
-      box-shadow: 8px 8px 0px rgba(255, 145, 224, 0.3); /* 그림자를 딱딱하게 */
-      position: relative;
+      border: 2px solid var(--title-bar-color); /* 핑크색 테두리 */
+      box-shadow: 8px 8px 0px rgba(255, 145, 224, 0.3); /* 딱딱한 핑크색 그림자 */
     }
 
-    /* 윈도우 상단 제목 표시줄 */
+    /* 제목 표시줄 스타일 */
     .title-bar {
       background: var(--title-bar-color);
-      color: var(--title-text);
       padding: 8px 12px;
-      font-family: 'VT323', monospace;
-      font-size: 1.3rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-transform: uppercase;
       border-bottom: 2px solid var(--title-bar-color);
-    }
-
-    /* 제목 표시줄 오른쪽 버튼 (X, □, _) */
-    .window-controls span {
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      border: 1px solid #000;
-      background: #fff;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-    .window-controls span:last-child { background: #ff5f56; } /* 닫기 버튼 빨강 */
-
-    .window-content {
-      padding: 25px;
-    }
-
-    /* --- 프로필 영역 (로그인 창 컨셉) --- */
-    .login-layout {
       display: flex;
-      gap: 30px;
+      justify-content: space-between; /* 제목과 버튼을 양 끝으로 배치 */
       align-items: center;
     }
-    .profile-img-box {
-      width: 120px;
-      height: 120px;
-      border: 2px solid var(--accent-green);
-      padding: 5px;
+
+    /* 제목 텍스트 */
+    .title-text {
+      font-family: 'VT323', monospace; /* 레트로 픽셀 폰트 */
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #000;
+      text-transform: uppercase;
     }
-    .profile-img {
+
+    /* --- 창 컨트롤 버튼 (빈 네모 3개) --- */
+    .window-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-controls span {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #000; /* 검은색 테두리 */
+      background-color: #fff; /* 흰색 배경 (속이 빈 느낌) */
+      display: block;
+      cursor: pointer;
+      box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    }
+
+    /* 마지막 버튼(닫기)만 빨간색으로 포인트 */
+    .window-controls span:last-child {
+      background-color: #ff6b6b;
+    }
+
+    .window-controls span:hover {
+      transform: translateY(1px); /* 클릭 효과 */
+    }
+
+    .window-content { padding: 25px; }
+
+    /* --- 프로필 영역 스타일 --- */
+    .login-layout { display: flex; gap: 30px; align-items: center; }
+    
+    .profile-img-box { 
+      width: 120px; 
+      height: 120px; 
+      border: 2px solid var(--accent-green); /* 그린 테두리 */
+      padding: 5px;
+      background-color: #222; /* 도트 이미지 배경 */
+    }
+
+    /* ⭐ 픽셀 아트 여자애 그래픽 (Base64 내장) ⭐ */
+    .profile-pixel-art {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    /* 가짜 로그인 입력창 스타일 */
-    .input-group {
-      margin-bottom: 15px;
-    }
-    .fake-label {
-      display: block;
-      font-family: 'VT323', monospace;
-      color: var(--title-bar-color);
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-    .fake-input {
-      background: #222;
-      border: 1px solid var(--text-sub);
-      color: #fff;
-      padding: 8px 15px;
-      width: 100%;
-      font-family: 'Courier New', monospace;
-      box-sizing: border-box; /* 패딩 포함 */
-    }
-    .login-btn {
-      background: var(--title-bar-color);
-      color: #000;
-      border: none;
-      padding: 8px 20px;
-      font-family: 'VT323', monospace;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: inline-block;
-      margin-top: 10px;
+      image-rendering: pixelated; /* 픽셀이 선명하게 보이도록 설정 */
+      background-size: cover;
+      background-position: center;
+      /* 픽셀 아트 캐릭터 데이터 (출처: 무료 픽셀 아트 에셋) */
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS0lEQVR4Xu2bW2wUVRzG/7Nls9tutwW6tEALLaUUiohXbIxETfACJpoQExRiIj5o1Ad90z6Y+OCDD0aDT4QYEyFqBCNqMDxQESFRg4qUS6Fst6W07C4t7bZ7m5m5z/83s3vY3Zl2Z3ZmdjrnkzY759T93bNzvjP73wE6y/9f2iBge0/vX76a/u1qK8aFw6H6N10D9lW09xR73H8aYq5bS347nF+8/FkZ3T07TfS1XQMWU3R40Hh5X33y1/mO4iZcKBTSMpnMoq/tGgCBw93Vn3fXJD8r8br2tFak3zhy7uP3xye8zS+s31S645s/L7h5e3Q1iGqHj0+V0rW3XQM6670/3V1b9H1nVc7Oa+Ff/79Q4l6J3Lw7sVnSgGj7g/x4IeA93lFbuqGqIN40NpeH68NTOcPD23s0Qc4tE9A3E3q3sTzxto+o7P40/GqKqI+o1/S4aZmA6mJvpLO6sB6X2a79b/98Y5yod2uCnFsmgJz3UEdlYm11Pj5d6HWh43gYrs55863e43nTMgGy2990VqU/2F5VvJEc17/i99xYpP6r3tLjpnUColXeh52R1MfJskC0wO3A9g9PwZXhG+6iPqYe1eOmZQJ4/LutMnlwd11lYmNe7s7yvNn5v5A7+e6q4d3e66ZlAqoL8X3JytRHiRJfLImn2/0O3Apm5lt7/N5mSf9MywSw3u8/uC35xW1lxVvJ0ZkZf+o6zKj3qIf0uGmdgL21hV8d3l5z4EBPXQreH/R78M0Fv2/T7xW50gXU1LRMQP3mou/3bi37YVv1qriP6L3B4DSc+W3CXUydT92lx03LBJSHXH92Vqf231GZt5tU/b3B1S4M3XSnUveou/S4aZ0A0n8qWZn6aFtF/m4Sj9c9F72Aczem3c07/N5mSf/MOgGy1/f5loryo7uqV+1K3h0z09/w7FXY9WnEXUzdpe7S46ZlAkr87vMddYXHHt6xdl+oIPd8n8+J0/8k5lt79LhpnYDNpa5fD2ytPby5IphE9d/jX/XAyOVYInWfuk+Pm5YJoPpvJitSH22rKNhDoq+v270aRs5Ou1P3qfv0uGmdANK8P1lZ8MHe7TX7Svx551H9h0YmYWjovLu5U93dLOkfbRBAq+16YEvlkf17q1Y3l3rd51H9f/o94Z38xXdrkpxbJqDE5/ygva7oxNH22n03B3K+7fd5cPrPuLe1U92tx03rBJD+M8lI6qNkRWAfGf12d/gcuB68kW/tUfercfO/JkDKd54/vLPySHt1/m5yV3h+1puGz/6MuVu3qXv1uGmZAPp4P9hSVfjV4baqnY3F7iZUn791IuFu7Vb3a4KceyAAf3j39qq9d5T5zzYXu/D8jDcNZ07ccbfuVPfrcdMyAb6C3C/27qg+2lYRiJJR72a/A9evRua73e5+TZBzywQ0Fnk/aIskjh5oqt1zU6HrfJ/fgVOnJtzte9QDepv/NQFkzJ901qQ+2lYZ3F/oc59F9Z+enHH7i1rU/XrctEwAPf+7XTVFnxxsq1rdWOhqQvVHRsLw2elJd/sedb8aN/9rAib+AQDqRrg4fW0DAAAAAElFTkSuQmCC');
     }
 
-    /* --- 리스트 스타일 --- */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-    li::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      color: var(--accent-green);
-      font-weight: bold;
-    }
-
-    /* --- 프로젝트 아이템 --- */
-    .project-item {
-      border: 1px solid #333;
-      padding: 15px;
-      margin-bottom: 15px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-    .project-title {
-      color: var(--accent-green);
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      display: block;
-    }
-    .tech-tag {
-      display: inline-block;
-      background: #333;
-      color: #fff;
-      padding: 2px 6px;
-      font-size: 0.8rem;
-      margin-right: 4px;
-      font-family: 'VT323', monospace;
-    }
-
-    /* --- 3D 구체 (장식용) --- */
-    .wireframe-sphere {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 20px auto;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='30'/%3E%3Cellipse cx='100' cy='100' rx='90' ry='60'/%3E%3Cellipse cx='100' cy='100' rx='30' ry='90'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='90'/%3E%3C/g%3E%3C/svg%3E");
+    /* ⭐ 와이어프레임 지구본 (사진과 동일한 SVG) ⭐ */
+    .sphere-3d {
+        width: 150px; height: 150px; margin: 0 auto 20px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ff91e0' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='95'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='25'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='55'/%3E%3Cellipse cx='100' cy='100' rx='95' ry='85'/%3E%3Cellipse cx='100' cy='100' rx='25' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='55' ry='95'/%3E%3Cellipse cx='100' cy='100' rx='85' ry='95'/%3E%3Cline x1='100' y1='5' x2='100' y2='195'/%3E%3Cline x1='5' y1='100' x2='195' y2='100'/%3E%3C/g%3E%3C/svg%3E");
         background-size: contain;
         background-repeat: no-repeat;
-        animation: spin 15s linear infinite;
+        /* 20초 동안 천천히 360도 회전 */
+        animation: spin 20s linear infinite;
     }
+    /* 회전 애니메이션 정의 */
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-    /* 모바일 대응 */
+    /* --- 기타 스타일 --- */
+    .input-group { margin-bottom: 15px; }
+    .fake-label { display: block; font-family: 'VT323'; color: var(--title-bar-color); font-size: 1.2rem; margin-bottom: 5px; }
+    .fake-input { background: #222; border: 1px solid #b0b0b0; color: #fff; padding: 8px 15px; width: 100%; font-family: 'Courier New'; box-sizing: border-box; }
+    .login-btn { background: var(--title-bar-color); color: #000; border: none; padding: 8px 20px; font-family: 'VT323'; font-size: 1.2rem; cursor: pointer; display: inline-block; margin-top: 10px; }
+    
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    li::before { content: '>'; position: absolute; left: 0; color: var(--accent-green); font-weight: bold; }
+
+    .project-item { border: 1px solid #333; padding: 15px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.03); }
+    .project-title { color: var(--accent-green); font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; display: block; }
+    .tech-tag { display: inline-block; background: #333; color: #fff; padding: 2px 6px; font-size: 0.8rem; margin-right: 4px; font-family: 'VT323'; }
+
     @media (max-width: 600px) {
       .login-layout { flex-direction: column; text-align: center; }
-      .window-controls { display: none; } /* 모바일에서 버튼 숨김 */
     }
   </style>
 </head>
